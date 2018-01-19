@@ -1,0 +1,1121 @@
+
+body{
+	background-image: url(../images/learn.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial; "Lucida Sans Unicode";
+  overflow-x: hidden;
+  font-size:14px;
+  font-family: Open Sans;
+
+  
+}
+
+
+
+/* Styling for header */
+.body {
+	background-color: #FFFFFF;
+	margin-top:40px;
+	margin-right: 160px;
+	margin-left: 160px; 
+  margin-bottom: 0px;
+  overflow: hidden;
+}
+
+
+
+.header {
+	background: #FFC213;
+	height: auto;
+  margin: 0 auto;
+  overflow:hidden;
+    
+
+}
+
+.wrapper {
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-bottom: 83px;	
+}
+
+.left img{
+	float: left;
+  width: 35%;
+  height: auto; 
+}
+
+
+.font_colour{
+  font-color:black;
+}
+
+
+
+.right{
+  float:right;
+  width:13%;
+}
+
+.right img{
+
+  float:left;
+  padding-right: 12px;
+}
+.today{
+  float: left;
+}
+
+.right_2{
+  float:right;
+  width: 35%;
+}
+
+.right_2 img{
+  float:left;
+  padding-right: 10px;
+}
+
+.right_2 a{
+  text-decoration: none;
+  color: black;
+}
+
+.right_1{
+  float:left;
+}
+
+
+
+
+
+/* Styling for navbar menu */
+
+
+
+ 
+/* CSS Document */
+
+
+
+
+
+
+.toggle,
+[id^=drop] {
+    display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav { 
+    margin:0;
+    padding: 0;
+    background-color: #000000;
+}
+
+
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+    display: flex;
+    justify-content: center;
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    }
+    
+/* Positioning the navigation items inline */
+nav ul li {
+    margin: 0px;
+    display:inline-block;
+    float: left;
+    background-color: #000000;
+    }
+
+/* Styling the links */
+nav a {
+    display:block;
+    padding:14px 20px;  
+    color:#FFF;
+    font-size:17px;
+    text-decoration:none;
+    line-height: 32px;
+}
+
+
+nav ul li ul li:hover { background: #000000; }
+
+/* Background color change on Hover */
+nav a:hover { 
+    background-color: #FFC213; 
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+    display: none;
+    position: absolute; 
+    /* has to be the same number as the "line-height" of "nav a" */
+    top: 60px; 
+}
+    
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+    display:inherit;
+    z-index: 3;
+}
+    
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+    width:170px;
+    float:none;
+    display:list-item;
+    position: relative;
+}
+
+/* Second, Third and more Tiers 
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+    position: relative;
+    top:-60px;
+    /* has to be the same number as the "width" of "nav ul ul li" */ 
+    left:170px; 
+}
+
+    
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+    
+
+    nav {
+        margin: 0;
+    }
+
+    /* Hide the navigation menu by default */
+    /* Also hide the  */
+    .toggle + a,
+    .menu {
+        display: none;
+    }
+
+    /* Stylinf the toggle lable */
+    .toggle {
+        display: block;
+        background-color: #000000;
+        padding:14px 20px;  
+        color:#FFF;
+        font-size:17px;
+        text-decoration:none;
+        border:none;
+    }
+
+    .toggle:hover {
+        background-color: #FFC213;
+    }
+
+    /* Display Dropdown when clicked on Parent Lable */
+    [id^=drop]:checked + ul {
+        display: block;
+    }
+
+    /* Change menu item's width to 100% */
+    nav ul li {
+        display: block;
+        width: 100%;
+        }
+
+    nav ul ul .toggle,
+    nav ul ul a {
+        padding: 0 40px;
+    }
+
+    nav ul ul ul a {
+        padding: 0 80px;
+    }
+
+    nav a:hover,
+    nav ul ul ul a {
+        background-color: #FFC213;
+    }
+  
+    nav ul li ul li .toggle,
+    nav ul ul a,
+  nav ul ul ul a{
+        padding:14px 20px;  
+        color:#FFF;
+        font-size:17px; 
+    }
+  
+  
+    nav ul li ul li .toggle,
+    nav ul ul a {
+        background-color: #212121; 
+    }
+
+    /* Hide Dropdowns by Default */
+    nav ul ul {
+        float: none;
+        position:static;
+        color: #ffffff;
+        /* has to be the same number as the "line-height" of "nav a" */
+    }
+        
+    /* Hide menus on hover***********effect changes on mobile review */
+    nav ul ul li:hover > ul,
+    nav ul li:hover > ul {
+        z-index:0;
+    }
+        
+    /* Fisrt Tier Dropdown */
+    nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul ul ul li {
+        position: static;
+
+        /* has to be the same number as the "width" of "nav ul ul li" */ 
+
+    }
+
+}
+
+@media all and (max-width : 150px) {
+
+    nav ul li {
+        display:block;
+        width: 94%;
+    }
+
+}
+
+/* styling for nav bar ends here*/
+.section{
+  margin-top: 12px;
+}
+.section1{
+	padding-left: 30px;
+	margin-bottom: -1px;
+}
+.section2{
+	margin-left: 30px;
+}
+
+
+.button{
+	border-style: solid;
+    color: black;
+    padding: 1px 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    border-radius: 4px; 
+}
+
+input[type=submit] {
+    
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    padding: 5px 14px;
+    margin: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+input[type=text]{
+   
+    padding: 12px 20px;
+    margin: 8px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.item1{
+  margin-top: 15px;
+	margin-bottom: 8px;
+}
+.item2{
+	margin-bottom: -15px;
+}
+
+.line{
+	width: 100%;
+	height: 27px;
+	border-bottom: 5px solid #FFC213;
+}
+
+
+/***********About us************/
+.about_wrap{
+  float:right;
+  width: 50%;
+}
+
+.aboutus{
+  padding-top: 20px;
+  padding-left:30px;
+  padding-right:30px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.aboutus h1{
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+
+
+ul li {
+    color: #FFC213;
+    list-style-type: square;
+    margin-left: 2em;
+}
+
+ul li span {
+    color: black;
+}
+
+
+/******************Left images*****************/
+.left_image{
+  margin-top: 30px; 
+  float:left;
+  width:50%;
+}
+
+.L_img{
+  padding-left: 30px;
+}
+
+/******************event images*****************/
+
+
+.imgitem{
+width: 100%;
+overflow:hidden;
+}
+
+.image1, .image2, .image3{
+float:left;
+width:31%;
+height: auto;
+margin: 1%;
+}
+
+
+
+/******************gallery*****************/
+
+
+.imgitem{
+width: 100%;
+overflow:hidden;
+padding-left: 25px;
+}
+
+.img1, .img2, .img3, .img4{
+float:left;
+width:20%;
+height: auto;
+margin: 2%;
+}
+
+/***************contact**********/
+.backg{
+  float:left;
+  overflow: hidden;
+  width:50%;
+  background: white
+}
+.container{
+  margin: 5%;
+  padding:10%;
+  background: #FFC213;
+}
+.container img{
+  float:left;
+  margin-right:6px;
+}
+
+.topcontent{
+  padding-bottom: 20px;
+}
+
+.middlecontent{
+  padding-bottom: 20px;
+}
+
+/**************form button*******************/
+
+#container {
+  background: white;
+  width:50%;
+  overflow:hidden;
+  
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea, #contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#contact {
+  background:#9B9B9B;
+  padding:25px;
+  margin:32px 35px;
+}
+
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"], #contact input[type="email"], #contact input[type="tel"], #contact input[type="url"], #contact textarea {
+  width:100%;
+  border:1px solid #CCC;
+  background:#FFF;
+  margin:0 0 5px;
+  padding:10px;
+}
+
+#contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
+  -webkit-transition:border-color 0.3s ease-in-out;
+  -moz-transition:border-color 0.3s ease-in-out;
+  transition:border-color 0.3s ease-in-out;
+  border:1px solid #AAA;
+}
+
+#contact textarea {
+  height:100px;
+  max-width:100%;
+  resize:none;
+}
+
+#contact button[type="submit"] {
+  cursor:pointer;
+  width:100%;
+  border:none;
+  background:#FFf;
+  color:#000000;
+  margin:0 0 5px;
+  padding:10px;
+  font-size:15px;
+}
+
+#contact button[type="submit"]:hover {
+  background:#FFC213;
+  -webkit-transition:background 0.3s ease-in-out;
+  -moz-transition:background 0.3s ease-in-out;
+  transition:background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#contact input:focus, #contact textarea:focus {
+  outline:0;
+  border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+.error {
+    color: black;
+}
+
+.success {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/****************Newsletter********************/
+#get_email button[type="submit"] {
+  cursor:pointer;
+  width:100px;
+  border:none;
+  background:#000;
+  color:#fff;
+  margin-top: -24px;
+  padding:10px;
+  font-size:15px;
+  border-radius: 4px;
+}
+
+
+/****************Registration********************/
+#reg {
+  background: white;
+  width:90%;
+  overflow:hidden;
+  
+}
+
+#Course {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#reg_contact{
+  padding:25px;
+  margin:50px;
+}
+
+
+#reg input[type="text"], #reg_contact input[type="email"], #reg_contact input[type="tel"], #reg_contact input[type="url"], #reg_contact textarea, #reg_contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#reg {
+
+  background:#ADADAD;
+  padding:25px;
+  margin:32px 35px;
+}
+
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#reg input[type="text"], #reg input[type="email"], #reg input[type="tel"], #reg input[type="url"], #reg textarea {
+  width:100%;
+  border:1px solid #CCC;
+  background:#FFF;
+  margin:0 0 5px;
+  padding:10px;
+}
+
+#reg input[type="text"]:hover, #reg input[type="email"]:hover, #reg input[type="tel"]:hover, #reg input[type="url"]:hover, #reg textarea:hover {
+  -webkit-transition:border-color 0.3s ease-in-out;
+  -moz-transition:border-color 0.3s ease-in-out;
+  transition:border-color 0.3s ease-in-out;
+  border:1px solid #AAA;
+}
+
+#reg textarea {
+  height:100px;
+  max-width:100%;
+  resize:none;
+}
+
+#reg button[type="submit"] {
+  cursor:pointer;
+  width:100%;
+  border:none;
+  background:black;
+  color:white;
+  margin:0 0 5px;
+  padding:10px;
+  font-size:15px;
+}
+
+#reg button[type="submit"]:hover {
+  background:#FFC116;
+  -webkit-transition:background 0.3s ease-in-out;
+  -moz-transition:background 0.3s ease-in-out;
+  transition:background-color 0.3s ease-in-out;
+}
+
+#reg button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#reg input:focus, #reg textarea:focus {
+  outline:0;
+  border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+
+/*****************Button*******************/
+
+#button {
+    background-color: #FFC213;
+    border: none;
+    color: black;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+
+/*****************Googlemap*******************/
+
+
+.mymap{
+  margin-left: 34px;
+  margin-right: 35px;
+  background-color: #FFC213; 
+}
+
+
+/********* footer ***********/
+.footer_left{
+  margin-top: 20px;
+  margin-bottom: 20px;
+	float:left;
+	margin-left: 30px;
+  color: white;	
+}
+
+
+.footer_right{
+	float: left;
+  color: white;
+  margin-right: 8px;
+}
+
+.footer_social{  
+  padding-right: 30px;
+}
+
+
+
+.footer_social a{
+  display: inline-block;
+  margin-right: 5px;
+}
+
+
+
+.mobile_footer{
+  
+  float:right;
+  margin-top: 18px;
+  width :18%;
+}
+
+
+.bk{
+  width: 100%;
+	background:black;
+  float:left;
+  margin: 0 auto;
+  overflow:hidden;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1540px){
+
+  body{
+  margin:0px;
+}
+
+.body{
+    background-color: #FFFFFF;
+    margin-top:40px;
+    margin-right: 0px;
+    margin-left: 0px;   
+ }
+
+.left img{
+  float: left;
+  width: 36%;
+  height: auto; 
+}
+
+.right_2{
+  float:right;
+  width: 44%;
+}
+
+.right{
+  float:right;
+  width:15%;
+  margin-right: 24px;
+}
+
+.footer_right{
+  margin-right: 15px;
+}
+
+.mobile_footer{
+  float:right;
+  margin-top: 18px;
+  width :17%;
+}
+
+
+}
+
+
+
+@media screen and (min-width: 150px) and (max-width: 768px){
+
+
+body{
+  margin:0px;
+}
+ 
+.body {
+  background-color: #FFFFFF;
+  margin-top:40px;
+  margin-right: 0px;
+  margin-left: 0px; 
+  margin-bottom: 0px;   
+}
+
+.left img{
+  float: left;
+  width: 100%;
+  height: auto; 
+}
+
+.right_2{
+  float:right;
+  width: 100%;
+  margin-top:10px;
+  margin-bottom: 10px;
+}  
+
+.right{
+  margin-top: 10px;
+  float:right;
+  width:100%;
+}
+
+.right_1{
+  float:left;
+}
+
+/***************Eventimage**************/
+
+.image1, .image2, .image3{
+float:left;
+width:100%;
+height: auto;
+margin: 1%;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 150px)
+{
+
+/*************index***************/
+
+.section{
+  margin-top: 12px;
+}
+.section1{
+  padding-left: 0px;
+}
+.section2{
+  margin-left: 0px;
+}
+
+
+/***********About us************/
+.about_wrap{
+  float:right;
+  width: 100%;
+}
+
+.aboutus{
+  padding-top: 20px;
+  padding-left:5px;
+  padding-right:2px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.aboutus h1{
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+
+
+ul li {
+    color: #FFC213;
+    list-style-type: square;
+    margin-left: 2em;
+}
+
+ul li span {
+    color: black;
+}
+
+
+/******************Left images*****************/
+.left_image{
+  margin-top: 20px; 
+  float:left;
+  width:100%;
+}
+
+.L_img{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+
+
+.footer_left{
+  float:none;
+  text-align:center;
+  
+  margin-right: 24px;
+  
+}
+
+.footer_social{
+  margin-top: 21px;
+  float:none;
+  padding-right: 30px;
+}
+
+.mobile_footer{
+  float:none;
+  margin-top: 18px;
+  width :100%;
+  text-align:center;
+  margin-left: 0px;
+}
+
+.footer_right{
+  float: none;
+  color: white;
+  margin-right: 0px;
+}
+
+.footer_social{ 
+  margin-top: 5px; 
+  padding-bottom: 8px;
+  padding-right: 0px;
+}
+
+/***********Header************/
+.wrapper {
+  padding-left: 5px; 
+}
+
+
+/***********About us************/
+.aboutus{
+  padding-left: 20px;
+  padding-top: 20px;
+  width:85%;
+}
+
+/***************contact**********/
+.backg{
+  float:left;
+  overflow: hidden;
+  width:100%; 
+}
+
+.container{
+  margin: 1%;
+  padding:10%;
+  background: #FFC213;
+}
+
+/**************form button*******************/
+
+#container {
+  /**
+  max-width: 400px
+  ***/
+  width:100%;
+  overflow:hidden; 
+}
+
+#contact {
+  margin:32px 3px;
+}
+
+
+/****************Registration********************/
+#reg {
+  background: white;
+  width:100%;
+  overflow:hidden;
+  
+}
+
+#Course {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+#reg_contact{
+  padding-right: 23px;
+  margin:0px;
+}
+
+
+#reg input[type="text"], #reg_contact input[type="email"], #reg_contact input[type="tel"], #reg_contact input[type="url"], #reg_contact textarea, #reg_contact button[type="submit"] { font:400 12px/16px "Open Sans", Helvetica, Arial, sans-serif; }
+
+#reg {
+
+  background:#ADADAD;
+  padding:0px;
+  margin:0px 0px;
+}
+
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#reg input[type="text"], #reg input[type="email"], #reg input[type="tel"], #reg input[type="url"], #reg textarea {
+  width:100%;
+  border:1px solid #CCC;
+  background:#FFF;
+  margin:0 0 5px;
+  padding:10px;
+}
+
+#reg input[type="text"]:hover, #reg input[type="email"]:hover, #reg input[type="tel"]:hover, #reg input[type="url"]:hover, #reg textarea:hover {
+  -webkit-transition:border-color 0.3s ease-in-out;
+  -moz-transition:border-color 0.3s ease-in-out;
+  transition:border-color 0.3s ease-in-out;
+  border:1px solid #AAA;
+}
+
+#reg textarea {
+  height:100px;
+  max-width:100%;
+  resize:none;
+}
+
+#reg button[type="submit"] {
+  cursor:pointer;
+  width:100%;
+  border:none;
+  background:black;
+  color:white;
+  margin:0 0 5px;
+  padding:10px;
+  font-size:15px;
+}
+
+#reg button[type="submit"]:hover {
+  background:#FFC116;
+  -webkit-transition:background 0.3s ease-in-out;
+  -moz-transition:background 0.3s ease-in-out;
+  transition:background-color 0.3s ease-in-out;
+}
+
+#reg button[type="submit"]:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+#reg input:focus, #reg textarea:focus {
+  outline:0;
+  border:1px solid #999;
+}
+::-webkit-input-placeholder {
+ color:#888;
+}
+:-moz-placeholder {
+ color:#888;
+}
+::-moz-placeholder {
+ color:#888;
+}
+:-ms-input-placeholder {
+ color:#888;
+}
+
+
+
+/******************gallery*****************/
+
+
+.imgitem{
+width: 100%;
+overflow:hidden;
+padding-left: 0px;
+}
+
+.img1, .img2, .img3, .img4{
+padding-top: 23px;
+float:left;
+width:100%;
+height: auto;
+margin: 0%;
+}
+
+/*****************Googlemap*******************/
+.mymap{
+  margin-left: 3px;
+  margin-right: 3px;
+  background-color: #FFC213; 
+}
+
+}
+
